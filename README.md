@@ -1,16 +1,17 @@
-# oci-auto-start-stop-compute
-Automate start and stop of OCI compute instances using Events and Functions to optimize cost.
-# OCI Auto Start/Stop Compute using Events and Functions
+## Goal
+
+Automatically start and stop OCI compute instances using OCI CLI and shell scripts.
+This project focuses on a practical, Free Tier–compatible approach to automation without relying on paid services like OCI Functions.
 
 ## 📌 Project Overview
 
-This is a hands-on learning project to automate starting and stopping an OCI compute instance using:
+This is a hands-on learning project to automate starting and stopping OCI compute instances using:
 
-* OCI Events
-* OCI Functions
-* OCI CLI (optional for testing)
+* OCI CLI
+* Shell scripting
+* Cron (for scheduling)
 
-The goal is to reduce costs and learn event-driven automation in Oracle Cloud.
+This approach is designed to work within OCI Free Tier limitations.
 
 ---
 
@@ -19,33 +20,16 @@ The goal is to reduce costs and learn event-driven automation in Oracle Cloud.
 Automatically:
 
 * Stop compute instances when not in use
-* Start them based on defined triggers
+* Start them based on defined schedules
 
 ---
 
 ## 🧱 Architecture (High-Level)
 
-* Event Rule → triggers → Function
-* Function → starts/stops → Compute Instance
+Script (Cron) → OCI CLI → Compute Instance
 
 ---
 
-## 📁 Project Structure
+## ⚙️ Approach Note
 
-* `docs/` → step-by-step setup and notes
-* `functions/` → function code
-* `scripts/` → CLI/testing scripts
-
----
-
-## ⚙️ Requirements
-
-* OCI Free Tier account
-* Basic understanding of cloud compute
-* OCI CLI (optional)
-
----
-
-## 🚧 Status
-
-Work in progress — building step by step.
+OCI Functions require a paid account, so this project uses CLI-based automation to achieve similar results within Free Tier.
