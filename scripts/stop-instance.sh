@@ -1,6 +1,7 @@
 #!/bin/bash
-
-INSTANCE_FILE="instance-list.txt"
+echo "===== $(date) ====="
+export PATH=/home/opc/bin:/usr/local/bin:/usr/bin:/bin
+INSTANCE_FILE="/home/opc/oci-auto-start-stop-compute/scripts/instance-list.txt"
 
 echo "Stopping instances..."
 
@@ -8,8 +9,7 @@ while read -r INSTANCE_ID
 do
   if [ -n "$INSTANCE_ID" ]; then
     echo "Stopping $INSTANCE_ID"
-
-    oci compute instance action \
+    /home/opc/bin/oci compute instance action \
       --instance-id "$INSTANCE_ID" \
       --action STOP
   fi
